@@ -10,7 +10,7 @@
                 <textarea name="message" autocomplete="OFF" id="" cols="30" rows="10" class="contato__form__input__control"></textarea>
             </div>
             <div class="contato__form__input">
-                <button class="contato__form__input__btn" >Enviar</button>
+                <button class="contato__form__input__btn" @click.prevent="null" >Enviar</button>
             </div>            
         </div>
     </form>
@@ -66,4 +66,17 @@
             }
         }
     }
+    @media screen and (max-width:968px) {
+        .contato{
+           width: 100%;  
+           margin: 0 auto;
+           &__form{
+                width: 100%;
+                &__input{
+                    width: 100%;
+                }
+            }
+        }  
+    }  
+        
 </style>

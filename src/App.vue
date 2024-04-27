@@ -64,6 +64,9 @@ export default {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    @media screen and (max-width:968px) {
+      margin: 0 auto;
+    }
   }
   .main-title{
     color: #999;
@@ -111,4 +114,6 @@ export default {
     flex-direction: column;
     border: none;
   }
+
+ 
 </style>
