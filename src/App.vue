@@ -15,13 +15,24 @@
         </ul>
       </div>
     </div>
+    <div class="container">
+      <lista-curso titulo="Lista de cursos"/>
+      <lista-professor titulo="Lista de professores" />
+      <contato-curso titulo="Contactos" />
+    </div>
 </template>
 
 <script>
+import ContatoCurso from './components/cursos/ContatoCurso.vue'
+import ListaCurso from './components/cursos/ListaCurso.vue'
+import ListaProfessor from './components/cursos/ListaProfessor.vue'
 
 export default {
   name: 'App',
   components: {
+    ListaCurso,
+    ListaProfessor,
+    ContatoCurso
   }
 }
 </script>
@@ -39,7 +50,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0em 1em;
+      padding: 1em 1em;
       &__title{
         font-size: 18px;
         color: #666;
