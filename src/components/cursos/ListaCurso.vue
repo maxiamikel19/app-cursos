@@ -1,6 +1,6 @@
 <template>
     <div class="cursos">
-        <h1 class="cursos__title">{{titulo}} </h1>
+        <h1 class="main-title">{{titulo}} </h1>
         <div class="cursos__content">
             <v-lista :lista="listaCurso"/>
         </div>

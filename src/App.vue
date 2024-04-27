@@ -4,21 +4,28 @@
         <h2 class="app__nav-menu__title">App cursos</h2>
         <ul class="app__nav-menu__menu">
           <li class="app__nav-menu__menu__item">
-            <a href="" class="app__nav-menu__menu__item__link">Professores</a>
+            <a href="" class="app__nav-menu__menu__item__link" @click.prevent="toggleMenu('lista-professor', 'Lista de professores')">Professores</a>
           </li>
           <li class="app__nav-menu__menu__item">
-            <a href="" class="app__nav-menu__menu__item__link">Cursos</a>
+            <a href="" class="app__nav-menu__menu__item__link" @click.prevent="toggleMenu('lista-curso', 'Lista de cursos')">Cursos</a>
           </li>
           <li class="app__nav-menu__menu__item">
-            <a href="" class="app__nav-menu__menu__item__link">Contato</a>
+            <a href="" class="app__nav-menu__menu__item__link" @click.prevent="toggleMenu('contato-curso', 'Contatos')">Contato</a>
           </li>
         </ul>
       </div>
     </div>
     <div class="container">
-      <lista-curso titulo="Lista de cursos"/>
+      <!-- <lista-curso titulo="Lista de cursos"/>
       <lista-professor titulo="Lista de professores" />
-      <contato-curso titulo="Contactos" />
+      <contato-curso titulo="Contactos" /> -->
+      <keep-alive>
+        <component 
+          :is="compoentSelected"
+          :titulo="propComponent"
+       />
+      </keep-alive>
+      
     </div>
 </template>
 
@@ -32,7 +39,22 @@ export default {
   components: {
     ListaCurso,
     ListaProfessor,
-    ContatoCurso
+    ContatoCurso,
+  },
+  data(){
+    return{
+      // professorList : ListaProfessor,
+      // courseList : ListaCurso,
+      // contact : ContatoCurso,
+      compoentSelected: null,
+      propComponent: ''
+    }
+  },
+  methods:{
+    toggleMenu: function (content, property){
+      this.compoentSelected = content;
+      this.propComponent = property;
+    }
   }
 }
 </script>
@@ -42,6 +64,12 @@ export default {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+  }
+  .main-title{
+    color: #999;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
   }
 
   .app{
@@ -73,5 +101,14 @@ export default {
         }
       }
     }
+  }
+
+  .container{
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="contato">
-        <h2>{{ titulo }}</h2>
+        <h2 class="main-title">{{ titulo }}</h2>
         <form action="">
         <div class="contato__form">    
            <div class="contato__form__input">
@@ -30,6 +30,7 @@
     .contato{
         border: none;
         margin: 0 auto;
+        width: 100%;
         &__form{
             border:none;
             margin: 0 auto;
